@@ -1,0 +1,1 @@
+import{_ as r}from"./preload-helper-cYIQMxwj-1.js";import{r as o}from"./stimulus-helpers-d189GC1Y-1.js";import"./performance-helpers-DpsuwFL7-1.js";o([["follow-button",r(()=>import("./follow-button-controller-ChBC1oc4-1.js"),[],import.meta.url)]]);

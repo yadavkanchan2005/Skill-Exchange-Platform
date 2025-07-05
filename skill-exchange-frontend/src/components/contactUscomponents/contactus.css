@@ -1,0 +1,127 @@
+/* ---------- Banner ---------- */
+.custom-contact-banner {
+  position: relative;
+  height: 300px;
+  background: url('/public/contact.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.custom-contact-text {
+  position: relative;
+  z-index: 1;
+}
+
+.custom-contact-text h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.custom-contact-text p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.custom-contact-info span {
+  display: inline-block;
+  margin: 0 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.custom-contact-info span:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* ---------- Form Container ---------- */
+.custom-contact-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.custom-contact-container h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.custom-contact-container p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.custom-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.custom-contact-form label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.custom-contact-form input,
+.custom-contact-form textarea {
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-contact-form input:focus,
+.custom-contact-form textarea:focus {
+  border-color: #107279;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(16,114,121,0.1);
+}
+
+.custom-contact-form button {
+  background: #107279;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-contact-form button:hover {
+  background: #0c5b61;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16,114,121,0.3);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .custom-contact-banner {
+    height: 200px;
+  }
+
+  .custom-contact-text h1 {
+    font-size: 32px;
+  }
+
+  .custom-contact-container {
+    margin: 40px 20px;
+    padding: 20px;
+  }
+}

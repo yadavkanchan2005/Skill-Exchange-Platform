@@ -1,0 +1,124 @@
+.quiz-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.quiz-container h2 {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.question-card {
+  background: #f8f9fa;
+  border-left: 5px solid #0d9488;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  page-break-inside: avoid;
+}
+
+.question-card strong {
+  font-size: 1.1rem;
+}
+
+.question-card label {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.question-card input[type='radio'] {
+  margin-right: 10px;
+}
+
+.text-success {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 500;
+}
+
+.text-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: 500;
+}
+
+.question-card small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.question-card .text-muted {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.text-center button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+
+.badge {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .question-card {
+    padding: 0.8rem 1rem;
+  }
+
+  .quiz-container h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+@media print {
+  .quiz-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding-top: 2in !important; 
+    padding-left: 0.5in !important;
+    padding-right: 0.5in !important;
+    padding-bottom: 2in !important;
+    margin: 0 !important;
+  }
+
+  .btn,
+  .text-center button {
+    display: none !important;
+  }
+
+  .question-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .badge {
+    color: white !important;
+    background-color: #28a745 !important;
+  }
+}

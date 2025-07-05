@@ -1,0 +1,115 @@
+
+
+.exchange-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+}
+
+.exchange-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.exchange-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.back-button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.filter-tabs button {
+  padding: 8px 18px;
+  border: none;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tabs button:hover {
+  background-color: #d5d5d5;
+}
+
+.filter-tabs .active {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+.exchange-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.request-section {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.request-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #34495e;
+}
+
+.request-section p {
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+}
+
+
+.exchange-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 15px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.exchange-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+
+.exchange-card .card-actions button {
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

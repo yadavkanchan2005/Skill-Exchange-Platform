@@ -1,0 +1,132 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+}
+
+.login-card {
+    display: flex;
+    background: white;
+    width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.login-left {
+    flex: 1;
+    background: #107279;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.welcome-image {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.greeting-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #f0f0f0;
+    text-align: center;
+    margin-top: 8px;
+    padding: 0 10px;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.login-right {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background: #107279;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.prompt {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.link {
+    color: #107279;
+    cursor: pointer;
+}
+
+.extra-options {
+    margin-top: 1rem;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-message {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.login-message.success {
+    color: green;
+}
+
+.login-message.error {
+    color: red;
+}
+
+.home-btn {
+    color: #107279;
+    cursor: pointer;
+}
+

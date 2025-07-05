@@ -1,0 +1,252 @@
+.container-fluid.h-100 {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+
+.messages-sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background-color: #e6f4ea;
+  border-right: 1px solid #cce5cc;
+  
+}
+
+.messages-sidebar h5 {
+  font-weight: 600;
+  color: #074b4c;
+}
+
+.messages-sidebar .thread-item {
+  transition: background 0.3s, color 0.3s;
+}
+
+.messages-sidebar .thread-item:hover {
+  background-color: #cce5cc;
+}
+
+.messages-sidebar .thread-item.active {
+  background-color: #074b4c;
+  color: white;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #66bb6a;
+}
+
+
+.chat-panel {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.chat-panel-header {
+  padding: 15px;
+  border-bottom: 1px solid #cce5cc;
+  background-color: #074b4c;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 15px;
+  background-color: #f1f8f6;
+}
+
+
+.chat-messages .message {
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.chat-messages .message.user {
+  background-color: #43e4d1;
+  color: white;
+  align-self: flex-end;
+
+}
+
+.chat-messages .message.other {
+  background-color: #cce5cc;
+  color: #000;
+  align-self: flex-start;
+}
+
+.chat-messages .message-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+
+.chat-input {
+  padding: 12px;
+  border-top: 1px solid #cce5cc;
+  background-color: #e6f4ea;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-input span {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-text-input {
+  flex-grow: 1;
+  height: 50px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #cce5cc;
+  background-color: white;
+}
+
+
+.send-btn {
+  background-color: #074b4c;
+  color: #fff;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #0b917a;
+  cursor: pointer;
+  color: white;
+}
+
+
+.icon-attach {
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.icon-attach:hover {
+  color: #00695c;
+}
+
+
+.typing-indicator {
+  font-style: italic;
+  color: #004d40;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* scrollbar for sidebar and messages */
+.messages-sidebar::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-sidebar::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #66bb6a;
+  border-radius: 10px;
+}
+
+.messages-sidebar::-webkit-scrollbar-track,
+.chat-messages::-webkit-scrollbar-track {
+  background: #e6f4ea;
+}
+
+
+.selected-thread {
+  background-color: #074b4c;
+  color: white;
+}
+
+
+.chat-bubble {
+  max-width: 60%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+}
+
+
+.own-message {
+  background-color: #139a8a;
+  color: rgb(255, 255, 255);
+  /* align-self: flex-end; */
+
+}
+
+
+.other-message {
+  background-color: #ceefed;
+  color: black;
+  /* align-self: flex-start; */
+
+}
+
+
+.file-name-preview {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-container {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.search-container input {
+  padding-left: 2.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  border: 1px solid #cce5cc;
+  background-color: white;
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.badge.unseen-count {
+  background-color: #e53935;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  margin-left: 20;
+
+  margin-right: 0.5rem;
+}

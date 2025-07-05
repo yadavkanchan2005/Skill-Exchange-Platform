@@ -1,0 +1,165 @@
+/* ---- Container ---- */
+.viewskills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---- Card ---- */
+.viewskills-card {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 30px;
+  padding: 20px; /* NEW: Add inside padding so content doesn’t touch edge */
+}
+
+.viewskills-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.viewskills-card-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #1e40af; /* Deep blue for more contrast */
+  margin-bottom: 12px;
+}
+
+.viewskills-card-body p {
+  margin-bottom: 6px;
+  color: #334155; /* Dark slate for neat look */
+  font-size: 1rem;
+}
+
+.viewskills-card-body p strong {
+  color: #0f766e; /* Teal strong headings */
+}
+
+.viewskills-card-body .have-want {
+  color: #0ea5e9; /* Sky blue for 'I have/I want' lines */
+  font-weight: 500;
+}
+
+.viewskills-border-top {
+  border-top: 1px solid #e5e7eb !important;
+}
+
+.viewskills-bg-light {
+  background: #f9fafb !important;
+}
+
+.viewskills-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+/* ---- Buttons ---- */
+.viewskills-btn {
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.viewskills-btn-edit {
+  color: #0d9488;
+  border: 2px solid #0d9488;
+  background: transparent;
+}
+
+.viewskills-btn-edit:hover {
+  background: #0d9488;
+  color: #fff;
+}
+
+.viewskills-btn-delete {
+  color: #b91c1c;
+  border: 2px solid #b91c1c;
+  background: transparent;
+}
+
+.viewskills-btn-delete:hover {
+  background: #b91c1c;
+  color: #fff;
+}
+
+.viewskills-btn-view {
+  background: #2563eb;
+  border: none;
+  color: #fff;
+}
+
+.viewskills-btn-view:hover {
+  opacity: 0.9;
+}
+
+.viewskills-btn-add {
+  background: #7c3aed;
+  border: none;
+  color: #fff;
+}
+
+.viewskills-btn-add:hover {
+  opacity: 0.9;
+}
+
+
+.viewskills-title {
+  text-align: center;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .viewskills-container {
+    padding: 15px;
+  }
+
+  .viewskills-card {
+    padding: 15px;
+  }
+
+  .viewskills-card-title {
+    font-size: 1.4rem;
+  }
+
+  .viewskills-card-body p {
+    font-size: 0.95rem;
+  }
+
+  .viewskills-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .viewskills-title {
+    font-size: 1.6rem;
+  }
+}
+
+.viewskills-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  border-right: 1px solid #e5e7eb;
+}
+
+.viewskills-main {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}

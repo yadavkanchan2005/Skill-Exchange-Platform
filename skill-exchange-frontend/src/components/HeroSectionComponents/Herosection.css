@@ -1,0 +1,16 @@
+.hero-section {
+    background-color: #EDFCFC
+}
+
+.hero-img {
+    max-width: 500px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.hero-section {
+  height: 100vh;          
+  display: flex;          
+  align-items: center;    
+  overflow: hidden;       
+}

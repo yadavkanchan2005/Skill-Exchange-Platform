@@ -1,0 +1,154 @@
+.about-banner {
+  background: url('/public/aboutus2.png') center/cover no-repeat;
+  height: 300px;
+  position: relative;
+}
+
+.about-banner-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* backdrop-filter: blur(3px); */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.about-banner h1 {
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+.about-banner p {
+  color: #ffffff !important;
+}
+.stats{
+    background-color:#146f75;
+    color: white;
+    padding-top: 30px;
+}
+
+.about-images-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px; 
+}
+
+
+.about-images-wrapper .main-img img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+
+.about-images-wrapper .small-img {
+  position: absolute;
+  bottom: -80px;
+  right: -120px;
+  width: 60%; 
+  border-radius: 10px;
+  border: 4px solid #fff;
+}
+
+
+.about-images-wrapper .hover-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about-images-wrapper .main-img:hover .hover-overlay {
+  opacity: 1;
+}
+
+.about-images-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px; 
+  margin-right: 100px;
+}
+
+.about-text-content {
+  padding-left: 40px; 
+}
+
+.about-text-content h2 {
+  font-size: 2rem; 
+}
+
+.about-text-content p {
+  font-size: 1rem; 
+}
+
+.about-text-content ul {
+  font-size: 1rem; 
+}
+
+.about-text-content button {
+  font-size: 0.9rem; 
+}
+
+
+@media (max-width: 768px) {
+  .about-images-wrapper {
+    margin: 0 auto 30px auto;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-images-wrapper .small-img {
+    position: static;
+    width: 70%;
+    margin-top: 15px;
+    display: block;
+  }
+}
+
+.about-images-wrapper .small-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+.about-images-wrapper .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about-images-wrapper .main-img:hover .hover-overlay {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .about-images-wrapper .small-img {
+    position: static;
+    margin-top: 15px;
+    width: 80%;
+  }
+  .about-images-wrapper {
+    text-align: center;
+  }
+}

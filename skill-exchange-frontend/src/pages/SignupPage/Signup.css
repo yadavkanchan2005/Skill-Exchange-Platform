@@ -1,0 +1,122 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.signup-card {
+  display: flex;
+  background: white;
+  width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.signup-left {
+  flex: 1;
+  background: #2b6777;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.signup-image {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.signup-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #f0f0f0;
+  text-align: center;
+  margin-top: 8px;
+  padding: 0 10px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.signup-right {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 300px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background: #2b6777;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.link {
+  color: #2b6777;
+  cursor: pointer;
+}
+
+.extra-options {
+  margin-top: 1rem;
+  font-size: 13px;
+  text-align: center;
+}
+
+.google-btn {
+  border: 1px solid #2b6777;
+  height: 35px;
+  width: 100%;
+  font-size: 12px;
+  border-radius: 6px;
+
+}
+
+.g-logo {
+  height: 20px;
+  width: 20px;
+  gap: 2px;
+
+
+}

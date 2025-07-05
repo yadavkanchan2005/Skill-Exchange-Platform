@@ -1,0 +1,75 @@
+.verify-otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f5f9;
+}
+
+.verify-otp-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.verify-otp-logo {
+    width: 70px;
+    margin-bottom: 1rem;
+}
+
+.verify-otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.verify-otp-text {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.verify-otp-input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.verify-otp-btn {
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.verify-otp-btn:hover {
+    background-color: #1e40af;
+}
+
+.verify-otp-message {
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.verify-otp-success {
+    background-color: #e6fffa;
+    color: #2f855a;
+}
+
+.verify-otp-error {
+    background-color: #fff5f5;
+    color: #c53030;
+}

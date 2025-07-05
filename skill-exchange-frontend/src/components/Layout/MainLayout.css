@@ -1,0 +1,33 @@
+.toggle-sidebar-btn {
+  position: fixed;
+  top: 20px;
+  left: 230px;
+  z-index: 1000;
+  background: #074b4c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: 225px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.with-sidebar {
+  margin-left: 225px;
+}
+
+@media (max-width: 768px) {
+  .toggle-sidebar-btn {
+    left: 10px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}

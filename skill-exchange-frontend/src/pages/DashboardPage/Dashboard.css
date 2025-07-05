@@ -1,0 +1,289 @@
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  width: 250px;
+  background-color: #073c3c;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.dashboard-main {
+  margin-left: 250px;
+  padding: 25px 35px;
+  width: calc(100% - 250px);
+  overflow-y: auto;
+  background-color: #f4f6f8;
+}
+
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 25px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.profile-left .profile-image {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #067373;
+}
+
+.profileright {
+  flex: 1;
+}
+
+.profileright h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.profileright p {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.profile-level {
+  font-size: 14px;
+  color: #107279;
+  font-weight: 600;
+}
+
+.profile-badges .badge {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* Progress Bar */
+.progress {
+  margin-top: 10px;
+  height: 14px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #025141, #04706e);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 0 8px;
+  color: white;
+}
+
+
+.exchange-summary {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.exchange-summary h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 16px;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 160px;
+  padding: 16px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.summary-card.pending {
+  background-color: #f39c12;
+}
+
+.summary-card.accepted {
+  background-color: #27ae60;
+}
+
+.summary-card.rejected {
+  background-color: #e74c3c;
+}
+
+.dashboard-section {
+  margin-top: 30px;
+}
+
+.dashboard-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border-left: 5px solid #107279;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+.skill-card h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 6px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  margin: 3px 0;
+  color: #555;
+}
+
+
+.notification-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 1000;
+  font-size: 13px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .dashboard-main {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .profileright h2 {
+    font-size: 18px;
+  }
+
+  .summary-card {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .skill-card h5 {
+    font-size: 15px;
+  }
+
+  .skill-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .profile-left .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profileright h2 {
+    font-size: 16px;
+  }
+
+  .exchange-summary h3,
+  .dashboard-section h3 {
+    font-size: 16px;
+  }
+
+  .summary-card {
+    font-size: 13px;
+  }
+}

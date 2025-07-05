@@ -1,0 +1,22 @@
+.exchange-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(245,245,255,0.8));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.exchange-card .btn {
+  border-radius: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.exchange-card .btn:hover {
+  transform: scale(1.05);
+}

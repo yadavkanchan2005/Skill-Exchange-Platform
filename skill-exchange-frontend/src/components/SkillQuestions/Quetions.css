@@ -1,0 +1,86 @@
+.skill-question-manager {
+  background: #f9f9ff;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+}
+
+.skill-question-manager h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+.question-card {
+  background: #fff;
+  padding: 20px;
+  border-left: 4px solid #055151;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.question-card input {
+  border-radius: 8px;
+}
+
+.btn {
+  border-radius: 30px !important;
+  padding: 6px 16px;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #10b981;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #0f9f75;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.btn-primary {
+  background-color: #04756c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0d9488;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  border: none;
+}
+
+.btn-delete:hover {
+  background-color: #ba0707;
+}
+
+.btn-delete {
+ background-color:#e30606;
+margin-left: 50px;
+border: none;
+border-radius: 5px;
+font-size: large;
+color: white;
+}
+
+
+
+
+.btn-update {
+background-color:#0d9488;
+margin-left: 50px;
+border: none;
+border-radius: 5px;
+font-size: large;
+color: white;
+}
