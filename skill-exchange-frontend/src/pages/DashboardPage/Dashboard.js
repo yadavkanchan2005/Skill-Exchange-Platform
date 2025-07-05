@@ -105,7 +105,7 @@ const Dashboard = () => {
     <div className="dashboard-layout">
       <Sidebar />
       <div className="dashboard-main">
-        <button className="btn-back" onClick={() => navigate('/dashboard')}>
+        <button className="btn-back" onClick={() => navigate('/')}>
           ← Back
         </button>
         <div className="profile-header">
