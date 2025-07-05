@@ -62,10 +62,6 @@ const Sidebar = () => {
                     <i className="bi bi-chat-dots me-2"></i> Messages
                 </NavLink>
 
-                <NavLink to="/rewards" className="sidebar-link">
-                    <i className="bi bi-award me-2"></i> Rewards
-                </NavLink>
-
                 <button className="logout" onClick={() => {
                     localStorage.removeItem('token');
                     navigate('/login');
