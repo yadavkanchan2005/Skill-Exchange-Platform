@@ -79,7 +79,6 @@ export default function Home() {
                   <span className="fw-bold text-black fs-4">({step.number})</span>
                   <h6 className="mb-0">{step.title}</h6>
                 </div>
-                <span className="fs-3 fw-light text-muted">+</span>
               </div>
             ))}
           </div>

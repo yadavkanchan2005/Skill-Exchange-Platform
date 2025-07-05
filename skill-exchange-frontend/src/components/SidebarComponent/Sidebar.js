@@ -21,10 +21,9 @@ const Sidebar = () => {
         fetchUserProfile();
     }, []);
 
-const profileImageUrl = user?.profilePicture
-            ? `http://localhost:3000/uploads/${user?.profilePicture}`
-            : "/default.png";
-
+    const profileImageUrl = user?.profilePicture
+        ? `https://skill-exchange-platform-pamq.onrender.com/uploads/${user?.profilePicture}`
+        : "/default.png";
 
     return (
         <div className="sidebar">
@@ -49,10 +48,10 @@ const profileImageUrl = user?.profilePicture
                     <i className="bi bi-lightbulb me-2"></i> My Skill
                 </NavLink>
 
-                  <NavLink to="/explore-skills" className="sidebar-link">
+                <NavLink to="/explore-skills" className="sidebar-link">
                     <i className="bi bi-search me-2"></i> Explore Skills
                 </NavLink>
-                
+
                 <NavLink to="/exchange-requests" className="sidebar-link">
                     <i className="bi bi-arrow-repeat me-2"></i> Exchange Requests
                 </NavLink>
@@ -62,7 +61,7 @@ const profileImageUrl = user?.profilePicture
                 <NavLink to="/messages" className="sidebar-link">
                     <i className="bi bi-chat-dots me-2"></i> Messages
                 </NavLink>
-              
+
                 <NavLink to="/rewards" className="sidebar-link">
                     <i className="bi bi-award me-2"></i> Rewards
                 </NavLink>
