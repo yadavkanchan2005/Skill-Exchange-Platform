@@ -309,7 +309,7 @@ const Signup = () => {
             const user = result.user;
             const idToken = await user.getIdToken();
 
-            const res = await fetch("http://localhost:3000/auth/google-login", {
+            const res = await fetch("https://skill-exchange-platform-pamq.onrender.com/auth/google-login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token: idToken }),

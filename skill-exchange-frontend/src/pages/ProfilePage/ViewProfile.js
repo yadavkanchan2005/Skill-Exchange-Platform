@@ -50,7 +50,7 @@ const ViewProfile = () => {
     }
 
     const profileImageUrl = user?.profilePicture
-        ? `http://localhost:3000/uploads/${user?.profilePicture}`
+        ? `https://skill-exchange-platform-pamq.onrender.com/uploads/${user?.profilePicture}`
         : "/default.png";
 
 

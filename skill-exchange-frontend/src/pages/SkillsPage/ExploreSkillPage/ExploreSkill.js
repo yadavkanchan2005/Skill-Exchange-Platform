@@ -97,7 +97,7 @@ const ExploreSkills = () => {
       <div className="container">
         {filteredSkills.map((skill) => {
           const profileImageUrl = skill.user?.profilePicture
-            ? `http://localhost:3000/uploads/${skill.user?.profilePicture}`
+            ? `https://skill-exchange-platform-pamq.onrender.com/uploads/${skill.user?.profilePicture}`
             : "/default.png";
 
           const descriptionLines = skill.description.split('\n').reduce((acc, line) => {

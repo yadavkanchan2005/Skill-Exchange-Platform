@@ -8,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { io } from 'socket.io-client';
 
 
-const socket = io("http://localhost:3000",{
-   // or whatever your backend port is
+const socket = io("https://skill-exchange-platform-pamq.onrender.com",{
    withCredentials:true});
    
 window.socket = socket;

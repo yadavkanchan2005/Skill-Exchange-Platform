@@ -184,7 +184,7 @@ const MessagesPage = ({ currentUserId }) => {
               <img
                 src={
                   thread.otherUser?.profilePicture
-                    ? `http://localhost:3000/uploads/${thread.otherUser.profilePicture}`
+                    ? `https://skill-exchange-platform-pamq.onrender.com/uploads/${thread.otherUser.profilePicture}`
                     : "/default.png"
                 }
                 alt="Profile"
@@ -211,7 +211,7 @@ const MessagesPage = ({ currentUserId }) => {
                 <img
                   src={
                     selectedThread.otherUser?.profilePicture
-                      ? `http://localhost:3000/uploads/${selectedThread.otherUser.profilePicture}`
+                      ? `https://skill-exchange-platform-pamq.onrender.com/uploads/${selectedThread.otherUser.profilePicture}`
                       : "/default.png"
                   }
                   alt="Profile"
@@ -243,14 +243,14 @@ const MessagesPage = ({ currentUserId }) => {
                         {msg.text && <div>{msg.text}</div>}
                         {msg.file && msg.fileType === 'image' && (
                           <img
-                            src={`http://localhost:3000/uploads/${msg.file}`}
+                            src={`https://skill-exchange-platform-pamq.onrender.com/uploads/${msg.file}`}
                             alt="attachment"
                             className="img-fluid rounded mt-1"
                           />
                         )}
                         {msg.file && msg.fileType === 'pdf' && (
                           <a
-                            href={`http://localhost:3000/uploads/${msg.file}`}
+                            href={`https://skill-exchange-platform-pamq.onrender.com/uploads/${msg.file}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="d-block mt-1 text-info text-decoration-underline"

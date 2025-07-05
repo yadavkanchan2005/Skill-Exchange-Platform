@@ -120,7 +120,7 @@ const EditProfile = () => {
                 <div className="col-md-4 text-center">
                   {(imagePreviewUrl || user?.profilePicture) && (
                     <img
-                      src={imagePreviewUrl || `http://localhost:3000/uploads/${user.profilePicture}`}
+                      src={imagePreviewUrl || `https://skill-exchange-platform-pamq.onrender.com/uploads/${user.profilePicture}`}
                       alt="Profile"
                       className="img-fluid rounded-circle mb-2"
                       style={{ width: '180px', height: '180px', objectFit: 'cover' }}
