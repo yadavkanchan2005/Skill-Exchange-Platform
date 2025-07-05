@@ -18,7 +18,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'http://localhost:3001',
+    origin: 'https://skill-exchange-platform-frontend.onrender.com',
     credentials: true,
 }));
 app.use(express.json());
