@@ -105,6 +105,9 @@ const Dashboard = () => {
     <div className="dashboard-layout">
       <Sidebar />
       <div className="dashboard-main">
+        <button className="" onClick={() => navigate('/')}>
+          ← Back
+        </button>
         <div className="profile-header">
           <div className="profile-left">
             <img src={profileImageUrl} alt="Profile" className="profile-image" />
