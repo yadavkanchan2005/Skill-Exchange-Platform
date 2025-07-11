@@ -56,6 +56,7 @@
     }
 }
 
+
 .login-right {
     flex: 1;
     padding: 2rem;
@@ -130,3 +131,17 @@
     cursor: pointer;
 }
 
+@media (max-width: 480px) {
+    .login-card {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        max-width: 90%;
+    }
+}
