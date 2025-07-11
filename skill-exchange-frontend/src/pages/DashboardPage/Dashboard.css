@@ -1,5 +1,3 @@
-
-
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -9,9 +7,11 @@
 
 .dashboard-layout {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  flex-direction: row;
+  background-color: #f4f6f8;
 }
+
 .sidebar {
   width: 250px;
   background-color: #073c3c;
@@ -27,16 +27,14 @@
   align-items: center;
 }
 
-
 .dashboard-main {
   margin-left: 250px;
   padding: 25px 35px;
   width: calc(100% - 250px);
   overflow-y: auto;
-  background-color: #f4f6f8;
 }
 
-
+/* Profile Section */
 .profile-header {
   display: flex;
   align-items: center;
@@ -108,7 +106,7 @@
   color: white;
 }
 
-
+/* Exchange Summary */
 .exchange-summary {
   margin-top: 25px;
   padding: 20px;
@@ -163,12 +161,7 @@
   margin-top: 30px;
 }
 
-.dashboard-section h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
+/* Passed Skills */
 .skill-card {
   background-color: #ffffff;
   border-left: 5px solid #107279;
@@ -196,7 +189,7 @@
   color: #555;
 }
 
-
+/* Notification Toast */
 .notification-toast {
   position: fixed;
   top: 20px;
@@ -216,13 +209,27 @@
     opacity: 0;
     transform: translateX(100%);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/* Media Queries */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar {
     width: 200px;
@@ -247,14 +254,6 @@
   .summary-card {
     min-width: 100%;
     font-size: 14px;
-  }
-
-  .skill-card h5 {
-    font-size: 15px;
-  }
-
-  .skill-card p {
-    font-size: 13px;
   }
 }
 
@@ -285,5 +284,16 @@
 
   .summary-card {
     font-size: 13px;
+  }
+
+  .progress-bar {
+    font-size: 10px;
+    padding: 0 5px;
+  }
+
+  .notification-toast {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
   }
 }
