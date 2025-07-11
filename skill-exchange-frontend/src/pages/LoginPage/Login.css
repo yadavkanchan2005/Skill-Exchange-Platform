@@ -1,20 +1,25 @@
+/* ---------- Base Styles ---------- */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #f4f4f4;
+    padding: 1rem;
 }
 
 .login-card {
     display: flex;
+    flex-direction: row;
     background: white;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
 }
 
+/* ---------- Left Panel ---------- */
 .login-left {
     flex: 1;
     background: #107279;
@@ -44,19 +49,7 @@
     word-break: keep-all;
 }
 
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-
+/* ---------- Right Panel ---------- */
 .login-right {
     flex: 1;
     padding: 2rem;
@@ -131,17 +124,87 @@
     cursor: pointer;
 }
 
+/* ---------- Animations ---------- */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ---------- Responsive Layouts ---------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .login-left,
+    .login-right {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .login-left {
+        text-align: center;
+    }
+
+    .welcome-image {
+        width: 180px;
+    }
+
+    .login-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .login-form {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Devices */
 @media (max-width: 480px) {
     .login-card {
         max-width: 100%;
         border-radius: 0;
         box-shadow: none;
     }
-}
 
-@media (max-width: 768px) {
-    .login-card {
-        flex-direction: column;
-        max-width: 90%;
+    .login-left {
+        padding: 1.5rem 1rem;
+    }
+
+    .login-right {
+        padding: 1.5rem 1rem;
+    }
+
+    .greeting-text {
+        font-size: 14px;
+    }
+
+    .welcome-image {
+        width: 140px;
+    }
+
+    .login-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
+
+    .extra-options {
+        font-size: 12px;
     }
 }
