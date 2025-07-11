@@ -22,43 +22,133 @@ import ExchangeRequests from './pages/ExchangeRequests/ExchangeRequests';
 import SkillQuestions from './components/SkillQuestions/SkillQuetions';
 import AboutUs from './components/aboutUscomponenets/about';
 import ContactUs from './components/contactUscomponents/contactus';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import { login } from './api/auth';
 
 
 
-function App() {
+// function App() {
 
-  return (
+//   return (
 
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/thank-you" element={<ThankYou />} />
-      <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/contact-us" element={<ContactUs />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/verify-otp" element={<VerifyOtp />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/edit-profile" element={<EditProfile />} />
-      <Route path="/my-profile" element={<ViewProfile />} />
-      <Route path="/my-skill" element={<MySkills />} />
-      <Route path="/my-skill/create" element={<CreateSkill />} />
-      <Route path="/my-skill/update/:id" element={<UpdateSkill />} />
-      <Route path="/my-skill/view" element={<ViewSkills />} />
-      <Route path="/explore-skills" element={<ExploreSkills />} />
-      <Route path="/notifications" element={<NotificationPage />} />
-      <Route path="/messages" element={<MessagesPage />} />
-      <Route path="/exchange-requests" element={<ExchangeRequests />} />
-      <Route path="/add-question/:id" element={<SkillQuestions />} />
-      
-    </Routes>
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="/thank-you" element={<ThankYou />} />
+//       <Route path="/about-us" element={<AboutUs />} />
+//       <Route path="/contact-us" element={<ContactUs />} />
+//       <Route path="/signup" element={<Signup />} />
+//       <Route path="/verify-otp" element={<VerifyOtp />} />
+//       <Route path="/login" element={<Login />} />
+//       <Route path="/forgot-password" element={<ForgotPassword />} />
+//       <Route path="/reset-password" element={<ResetPassword />} />
+//       <Route path="/dashboard" element={<Dashboard />} />
+//       <Route path="/edit-profile" element={<EditProfile />} />
+//       <Route path="/my-profile" element={<ViewProfile />} />
+//       <Route path="/my-skill" element={<MySkills />} />
+//       <Route path="/my-skill/create" element={<CreateSkill />} />
+//       <Route path="/my-skill/update/:id" element={<UpdateSkill />} />
+//       <Route path="/my-skill/view" element={<ViewSkills />} />
+//       <Route path="/explore-skills" element={<ExploreSkills />} />
+//       <Route path="/notifications" element={<NotificationPage />} />
+//       <Route path="/messages" element={<MessagesPage />} />
+//       <Route path="/exchange-requests" element={<ExchangeRequests />} />
+//       <Route path="/add-question/:id" element={<SkillQuestions />} />
+
+//     </Routes>
 
 
 
-  );
-}
+//   );
+// }
 
-export default App;
+// export default App;
+
+
+
+
+<Routes>
+  {/* ✅ Public Routes */}
+  <Route path="/" element={<Home />} />
+  <Route path="/thank-you" element={<ThankYou />} />
+  <Route path="/about-us" element={<AboutUs />} />
+  <Route path="/contact-us" element={<ContactUs />} />
+  <Route path="/signup" element={<Signup />} />
+  <Route path="/verify-otp" element={<VerifyOtp />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/forgot-password" element={<ForgotPassword />} />
+  <Route path="/reset-password" element={<ResetPassword />} />
+
+  {/* ✅ Protected Routes */}
+  <Route path="/dashboard" element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/edit-profile" element={
+    <ProtectedRoute>
+      <EditProfile />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/my-profile" element={
+    <ProtectedRoute>
+      <ViewProfile />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/my-skill" element={
+    <ProtectedRoute>
+      <MySkills />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/my-skill/create" element={
+    <ProtectedRoute>
+      <CreateSkill />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/my-skill/update/:id" element={
+    <ProtectedRoute>
+      <UpdateSkill />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/my-skill/view" element={
+    <ProtectedRoute>
+      <ViewSkills />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/explore-skills" element={
+    <ProtectedRoute>
+      <ExploreSkills />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/notifications" element={
+    <ProtectedRoute>
+      <NotificationPage />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/messages" element={
+    <ProtectedRoute>
+      <MessagesPage />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/exchange-requests" element={
+    <ProtectedRoute>
+      <ExchangeRequests />
+    </ProtectedRoute>
+  } />
+
+  <Route path="/add-question/:id" element={
+    <ProtectedRoute>
+      <SkillQuestions />
+    </ProtectedRoute>
+  } />
+</Routes>
