@@ -7,9 +7,8 @@
 
 .dashboard-layout {
   display: flex;
-  min-height: 100vh;
-  flex-direction: row;
-  background-color: #f4f6f8;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -25,6 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .dashboard-main {
@@ -32,9 +32,9 @@
   padding: 25px 35px;
   width: calc(100% - 250px);
   overflow-y: auto;
+  background-color: #f4f6f8;
 }
 
-/* Profile Section */
 .profile-header {
   display: flex;
   align-items: center;
@@ -71,23 +71,6 @@
   margin-top: 5px;
 }
 
-.profile-level {
-  font-size: 14px;
-  color: #107279;
-  font-weight: 600;
-}
-
-.profile-badges .badge {
-  font-size: 0.8rem;
-  padding: 4px 8px;
-  border-radius: 10px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  color: white;
-  margin-top: 4px;
-  display: inline-block;
-}
-
-/* Progress Bar */
 .progress {
   margin-top: 10px;
   height: 14px;
@@ -106,7 +89,6 @@
   color: white;
 }
 
-/* Exchange Summary */
 .exchange-summary {
   margin-top: 25px;
   padding: 20px;
@@ -161,35 +143,6 @@
   margin-top: 30px;
 }
 
-/* Passed Skills */
-.skill-card {
-  background-color: #ffffff;
-  border-left: 5px solid #107279;
-  padding: 16px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-3px);
-}
-
-.skill-card h5 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #2d3436;
-  margin-bottom: 6px;
-}
-
-.skill-card p {
-  font-size: 14px;
-  margin: 3px 0;
-  color: #555;
-}
-
-/* Notification Toast */
 .notification-toast {
   position: fixed;
   top: 20px;
@@ -216,50 +169,34 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .dashboard-main {
-    padding: 20px;
-  }
-
-  .summary-cards {
-    flex-direction: column;
-  }
-
-  .summary-card {
-    width: 100%;
-  }
+/* Sidebar Toggle Button */
+.sidebar-toggle-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  background-color: #073c3c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  z-index: 101;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px;
+    transform: translateX(-100%);
+    width: 220px;
   }
 
-  .dashboard-main {
-    margin-left: 200px;
-    padding: 20px;
-    width: calc(100% - 200px);
+  .sidebar.open {
+    transform: translateX(0);
   }
 
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 16px;
-  }
-
-  .profileright h2 {
-    font-size: 18px;
-  }
-
-  .summary-card {
-    min-width: 100%;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    display: none;
+  .sidebar-toggle-button {
+    display: block;
   }
 
   .dashboard-main {
@@ -268,6 +205,17 @@
     padding: 16px;
   }
 
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .summary-card {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
   .profile-left .profile-image {
     width: 70px;
     height: 70px;
@@ -277,23 +225,7 @@
     font-size: 16px;
   }
 
-  .exchange-summary h3,
-  .dashboard-section h3 {
-    font-size: 16px;
-  }
-
   .summary-card {
     font-size: 13px;
-  }
-
-  .progress-bar {
-    font-size: 10px;
-    padding: 0 5px;
-  }
-
-  .notification-toast {
-    top: 10px;
-    right: 10px;
-    font-size: 12px;
   }
 }
