@@ -1,3 +1,4 @@
+
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -10,7 +11,6 @@
   height: 100vh;
   overflow: hidden;
 }
-
 .sidebar {
   width: 250px;
   background-color: #073c3c;
@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
 }
+
 
 .dashboard-main {
   margin-left: 250px;
@@ -34,6 +34,7 @@
   overflow-y: auto;
   background-color: #f4f6f8;
 }
+
 
 .profile-header {
   display: flex;
@@ -71,6 +72,23 @@
   margin-top: 5px;
 }
 
+.profile-level {
+  font-size: 14px;
+  color: #107279;
+  font-weight: 600;
+}
+
+.profile-badges .badge {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* Progress Bar */
 .progress {
   margin-top: 10px;
   height: 14px;
@@ -88,6 +106,7 @@
   padding: 0 8px;
   color: white;
 }
+
 
 .exchange-summary {
   margin-top: 25px;
@@ -143,6 +162,40 @@
   margin-top: 30px;
 }
 
+.dashboard-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border-left: 5px solid #107279;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+.skill-card h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 6px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  margin: 3px 0;
+  color: #555;
+}
+
+
 .notification-toast {
   position: fixed;
   top: 20px;
@@ -162,41 +215,51 @@
     opacity: 0;
     transform: translateX(100%);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/* Sidebar Toggle Button */
-.sidebar-toggle-button {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
-  background-color: #073c3c;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  z-index: 101;
-}
-
-/* Responsive */
+/* Media Queries */
 @media (max-width: 768px) {
   .sidebar {
-    transform: translateX(-100%);
-    width: 220px;
+    width: 200px;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
+  .dashboard-main {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
   }
 
-  .sidebar-toggle-button {
-    display: block;
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .profileright h2 {
+    font-size: 18px;
+  }
+
+  .summary-card {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .skill-card h5 {
+    font-size: 15px;
+  }
+
+  .skill-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
   }
 
   .dashboard-main {
@@ -205,17 +268,6 @@
     padding: 16px;
   }
 
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .summary-card {
-    min-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
   .profile-left .profile-image {
     width: 70px;
     height: 70px;
@@ -225,7 +277,14 @@
     font-size: 16px;
   }
 
+  .exchange-summary h3,
+  .dashboard-section h3 {
+    font-size: 16px;
+  }
+
   .summary-card {
     font-size: 13px;
   }
 }
+
+
