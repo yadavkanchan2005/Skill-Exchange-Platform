@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+#  Skill Exchange Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Skill Exchange Platform** 
+The Skill Exchange Platform is a full-stack MERN application designed for peer-to-peer learning. 
+Users can sign up using Google, list their skills, request to learn other users' skills, 
+attempt quizzes, and chat in real-time using Socket.IO.
 
-## Available Scripts
+This system promotes collaborative learning by connecting users who want to learn 
+and teach skills — all without any monetary transactions.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Project Type
+## Desktop-Based Application
 
-### `npm test`
+> This is a **desktop-first** web application. It is best viewed in a browser on a laptop or PC. Mobile responsiveness is included but optimized for larger screens.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ # 2. Features
 
-### `npm run build`
+-  Skill Exchange Requests  
+- Real-Time Chat using Socket.IO  
+-  Google Login with Firebase Auth  
+-  Skill Quiz Module with One-Time Attempt  
+-  Smart Notifications for Exchange Requests & Messages  
+-  File Upload Support in Chat (image, video)  
+-  Responsive, Modular UI  
+-  JWT-based Secure Authentication
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Technology Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
+- React.js
+- Bootstrap (for responsive UI)
+- HTML, CSS, JavaScript
 
-### `npm run eject`
+### 🔧 Backend
+- Node.js
+- Express.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Database
+- MongoDB
+- Mongoose (for schema and relations)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###  Authentication
+- Firebase Authentication (Google Login)
+- JSON Web Token (JWT)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Real-Time
+- Socket.IO (live messaging, typing indicators)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Others
+- SweetAlert2
+- html2pdf.js (PDF export for quiz result)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Features
+- Google Login with Firebase
+- Skill listing and filtering
+- Send/accept exchange requests
+- Real-time chat with typing indicators
+- Skill-based quiz with scoring
+- One-time quiz attempt with result view
+- Notifications for requests and responses
+- Responsive UI with isolated scroll areas
+- User profile with image support
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+ 5. User Journey
+1. User signs up/login via Google.
+2. Adds skills they can teach.
+3. Browses skills others offer.
+4. Sends an exchange request.
+5. Upon acceptance, chat is enabled.
+6. User attempts a quiz (once).
+7. After the session, both users can mark the session as complete.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+6. Database Design
+Collections:
+- User
+- Skill
+- Question
+- ExchangeRequest
+- ChatMessage
+- Notification
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Key Relationships:
+- One-to-Many: User → Skills, Questions
+- Many-to-One: ExchangeRequest.sender/receiver → User
+- Many-to-One: ChatMessage → ExchangeRequest
+- One-to-One (optional): Notification → ExchangeRequest
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+7. Real-Time Messaging
+- Socket.IO used for sending and receiving messages instantly.
+- Messages update in real-time without page reload.
+- Message status supports 'read' and 'unread' handling.
 
-### Advanced Configuration
+8. Skill Quiz Module
+- Each skill has MCQ-based quiz questions.
+- Users attempt the quiz only once.
+- Score is calculated and shown instantly.
+- Results include selected answers, correct answers, and explanations.
+- Results can be exported as PDF.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+9. Google Login with Firebase
+- Firebase Auth used for social login.
+- On login, Firebase ID token is verified at backend.
+- JWT token is issued for session persistence.
+- Google users are saved with `isGoogleUser` flag.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+10. Challenges Faced & Solutions
+# Real-Time Chat
+➤ Implemented using Socket.IO; managed events for typing, message delivery, read status.
 
-### `npm run build` fails to minify
+# Google Login Integration
+➤ Firebase with secure JWT issuing for token-based login persistence.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Complex MongoDB Relations
+➤ Designed proper referencing using Mongoose for clear and efficient queries.
+
+# Media Support
+➤ Handled user profile and image uploads.
+
+# Quiz Attempt Validation
+➤ Ensured only one quiz attempt and validated results securely.
+
+# Auth State Management
+➤ Handled token and user state sync using localStorage and React context.
+
+11. Future Scope
+- Skill rating and review system.
+- Group chat or video call integration.
+- Email notifications/reminders.
+- Multi-language support.
+- AI-based skill recommendations.
+
+
+Live Link: [Skill Exchange Website](https://skill-exchange-platform-frontend.onrender.com)
