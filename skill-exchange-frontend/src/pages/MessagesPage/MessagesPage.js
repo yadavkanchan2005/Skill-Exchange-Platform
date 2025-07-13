@@ -4,11 +4,8 @@ import { sendChatMessage, markMessagesAsRead, getAcceptedChats } from '../../api
 import moment from 'moment';
 import './MessagesPage.css';
 import { FaPaperclip, FaCheckDouble, FaPaperPlane, FaSearch } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-
 
 const MessagesPage = ({ currentUserId }) => {
-  const navigate = useNavigate();
   const [chatThreads, setChatThreads] = useState([]);
   const [selectedThread, setSelectedThread] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -20,7 +17,6 @@ const MessagesPage = ({ currentUserId }) => {
   const messagesEndRef = useRef(null);
   const typingTimeoutRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState('');
-
 
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const fallbackUserId = storedUser?._id || storedUser?.id || null;
@@ -166,7 +162,6 @@ const MessagesPage = ({ currentUserId }) => {
 
   return (
     <div className="container-fluid h-100">
-      <button className="back-floating-btn" onClick={() => navigate("/dashboard")}>←</button>
       <div className="row h-100">
         <div className="col-4 messages-sidebar">
           <div className="p-3 d-flex align-items-center">
