@@ -162,6 +162,7 @@ const MessagesPage = ({ currentUserId }) => {
 
   return (
     <div className="container-fluid h-100">
+      <button className="back-floating-btn" onClick={() => navigate("/dashboard")}>←</button>
       <div className="row h-100">
         <div className="col-4 messages-sidebar">
           <div className="p-3 d-flex align-items-center">
