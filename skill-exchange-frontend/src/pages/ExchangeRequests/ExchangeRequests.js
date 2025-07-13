@@ -51,80 +51,36 @@ const ExchangeRequests = () => {
       </header>
 
       <div className="exchange-grid">
-        {filter === 'received' && (
+        {showReceived && (
           <div className="request-section">
             <h2>Received Requests</h2>
-            {requests.received.length === 0 ? (
-              <p>No received requests.</p>
-            ) : (
-              requests.received.map((req) => (
-                <ExchangeRequestCard
-                  key={req._id}
-                  request={req}
-                  type="received"
-                  onComplete={handleComplete}
-                  currentUserId={currentUser._id}
-                />
-              ))
-            )}
+            {requests.received.length === 0 && <p>No received requests.</p>}
+            {requests.received.map((req) => (
+              <ExchangeRequestCard
+                key={req._id}
+                request={req}
+                type="received"
+                onComplete={handleComplete}
+                currentUserId={currentUser._id}
+              />
+            ))}
           </div>
         )}
 
-        {filter === 'sent' && (
+        {showSent && (
           <div className="request-section">
             <h2>Sent Requests</h2>
-            {requests.sent.length === 0 ? (
-              <p>No sent requests.</p>
-            ) : (
-              requests.sent.map((req) => (
-                <ExchangeRequestCard
-                  key={req._id}
-                  request={req}
-                  type="sent"
-                  onComplete={handleComplete}
-                  currentUserId={currentUser._id}
-                />
-              ))
-            )}
+            {requests.sent.length === 0 && <p>No sent requests.</p>}
+            {requests.sent.map((req) => (
+              <ExchangeRequestCard
+                key={req._id}
+                request={req}
+                type="sent"
+                onComplete={handleComplete}
+                currentUserId={currentUser._id}
+              />
+            ))}
           </div>
-        )}
-
-        {filter === 'all' && (
-          <>
-            <div className="request-section">
-              <h2>Received Requests</h2>
-              {requests.received.length === 0 ? (
-                <p>No received requests.</p>
-              ) : (
-                requests.received.map((req) => (
-                  <ExchangeRequestCard
-                    key={req._id}
-                    request={req}
-                    type="received"
-                    onComplete={handleComplete}
-                    currentUserId={currentUser._id}
-                  />
-                ))
-              )}
-            </div>
-
-            <div className="request-section">
-              <h2>Sent Requests</h2>
-              {requests.sent.length === 0 ? (
-                <p>No sent requests.</p>
-              ) : (
-                requests.sent.map((req) => (
-                  <ExchangeRequestCard
-                    key={req._id}
-                    request={req}
-                    type="sent"
-                    onComplete={handleComplete}
-                    currentUserId={currentUser._id}
-                  />
-                ))
-              )}
-            </div>
-          </>
         )}
       </div>
     </div>
