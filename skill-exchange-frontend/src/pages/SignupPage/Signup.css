@@ -4,12 +4,15 @@
   align-items: center;
   min-height: 100vh;
   background: #f4f4f4;
+  padding: 1rem;
 }
 
 .signup-card {
   display: flex;
+  flex-direction: row;
   background: white;
   width: 800px;
+  max-width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
@@ -24,16 +27,19 @@
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
+  text-align: center;
 }
 
-.signup-image {
+.signup-image,
+.welcome-image {
   width: 250px;
   height: auto;
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
 }
 
-.signup-text {
+.signup-text,
+.greeting-text {
   font-size: 16px;
   font-weight: 400;
   color: #f0f0f0;
@@ -45,12 +51,10 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-10px);
   }
@@ -65,8 +69,8 @@
 }
 
 .signup-logo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 1rem;
 }
 
@@ -91,6 +95,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .link {
@@ -106,17 +111,74 @@
 
 .google-btn {
   border: 1px solid #2b6777;
-  height: 35px;
+  height: 40px;
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
   border-radius: 6px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: white;
+  color: #2b6777;
+  font-weight: 500;
 }
 
 .g-logo {
   height: 20px;
   width: 20px;
-  gap: 2px;
+}
 
+/* =================== Responsive =================== */
 
+@media (max-width: 768px) {
+  .signup-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .signup-left,
+  .signup-right {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .signup-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .signup-image,
+  .welcome-image {
+    width: 200px;
+  }
+
+  .google-btn {
+    font-size: 12px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    max-width: 100%;
+  }
+
+  .btn-primary {
+    font-size: 13px;
+  }
+
+  .signup-text,
+  .greeting-text {
+    font-size: 14px;
+  }
+
+  .input-field {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .google-btn {
+    font-size: 12px;
+  }
 }
