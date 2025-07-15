@@ -7,7 +7,10 @@ const onlineUsers = new Map(); // userId => socket.id
 export const initSocket = (server) => {
     io = new Server(server, {
         cors: {
-            origin: 'http://localhost:3001',
+            origin: [
+                'http://localhost:3001',
+                'https://skill-exchange-platform-frontend.onrender.com'
+            ],
             methods: ['GET', 'POST'],
             credentials: true,
         },
@@ -23,7 +26,7 @@ export const initSocket = (server) => {
             console.log(`User ${userId} joined. Online users:`, [...onlineUsers.keys()]);
 
             // Broadcast online status
-             socket.broadcast.emit('userOnline', userId);
+            socket.broadcast.emit('userOnline', userId);
         });
 
         // Typing indicator
