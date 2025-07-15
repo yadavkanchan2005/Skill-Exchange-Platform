@@ -1,3 +1,7 @@
+
+import dotenv from "dotenv";
+dotenv.config();
+
 import { createTransport } from "nodemailer"; //send otp on email
 const sendMail = async (email, subject, data) => {
   const transport = createTransport({
