@@ -1,15 +1,15 @@
 import { createTransport } from "nodemailer"; //send otp on email
 const sendMail = async (email, subject, data) => {
-    const transport = createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        auth: {
-            user: process.env.Gmail,
-            pass: process.env.Password
-        }
-    })
+  const transport = createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    auth: {
+      user: process.env.Gmail,
+      pass: process.env.Password
+    }
+  })
 
-    const html = `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,28 +56,28 @@ const sendMail = async (email, subject, data) => {
 </html>
 `;
 
-    await transport.sendMail({
-        from: process.env.Gmail,
-        to: email,
-        subject,
-        html
-    })
+  await transport.sendMail({
+    from: process.env.Gmail,
+    to: email,
+    subject,
+    html
+  })
 }
 
 
 ///---------------------------
 
 export const sendForgotMail = async (subject, data) => {
-    const transport = createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        auth: {
-            user: process.env.Gmail,
-            pass: process.env.Password,
-        },
-    });
+  const transport = createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    auth: {
+      user: process.env.Gmail,
+      pass: process.env.PASSWORD,
+    },
+  });
 
-    const html = `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -135,12 +135,12 @@ export const sendForgotMail = async (subject, data) => {
   </html>
   `;
 
-    await transport.sendMail({
-        from: process.env.Gmail,
-        to: data.email,
-        subject,
-        html,
-    });
+  await transport.sendMail({
+    from: process.env.Gmail,
+    to: data.email,
+    subject,
+    html,
+  });
 };
 
 
