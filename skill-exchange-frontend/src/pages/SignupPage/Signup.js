@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import './Signup.css';
 import logo from '../../assets/icons/singlogo.png';
@@ -75,17 +72,36 @@ const Signup = () => {
     const handleSignup = async () => {
         try {
             const formData = { name, email, password };
+            console.log("Sending signup data:", formData);
+
             const res = await signup(formData);
 
-            toast.success(res.data.message || 'OTP sent to your email!');
-            localStorage.setItem('activationToken', res.data.activationToken);
+            if (res && res.data) {
+                console.log(" Received response:", res.data);
+                toast.success(res.data.message || 'OTP sent to your email!');
+                localStorage.setItem('activationToken', res.data.activationToken);
+                setTimeout(() => navigate('/verify-otp'), 2000);
+            } else {
+                console.error(" Empty response object:", res);
+                toast.error("Unexpected response from server.");
+            }
 
-            setTimeout(() => navigate('/verify-otp'), 2000);
         } catch (err) {
             console.error("Signup error:", err);
+
+            if (err.response) {
+                console.error("Error response data:", err.response.data);
+                console.error(" Error status:", err.response.status);
+            } else if (err.request) {
+                console.error(" No response received:", err.request);
+            } else {
+                console.error("Setup error:", err.message);
+            }
+
             toast.error(err.response?.data?.message || 'Signup failed. Try again.');
         }
     };
+
 
     const handleGoogleLogin = async () => {
         try {
@@ -191,7 +207,7 @@ const Signup = () => {
                         </div>
                     </form>
 
-                  
+
                     <div className="google mt-4">
                         <button
                             type="button"
