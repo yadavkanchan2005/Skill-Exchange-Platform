@@ -62,17 +62,27 @@ export const verifyUser = TryCatch(async (req, res) => {
             message: "Wrong OTP"
         });
     }
-    await User.create({
+    const user = await User.create({
         name: verify.user.name,
         email: verify.user.email,
         password: verify.user.password,
         isVerified: true,
     })
 
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+
     res.json({
         message: "User Registered",
-    })
-})
+        token,
+        user: {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+        },
+    });
+});
+
+
 
 export const loginUser = TryCatch(async (req, res) => {
     const { email, password } = req.body;
@@ -185,32 +195,32 @@ export const myProfile = TryCatch(async (req, res) => {
 });
 
 export const googleLogin = TryCatch(async (req, res) => {
-  const { token } = req.body;
+    const { token } = req.body;
 
-  // Verify Firebase token
-  const decodedToken = await admin.auth().verifyIdToken(token);
-  const { email, name, picture, uid: googleId } = decodedToken;
-  //  Find or create user
-  let user = await User.findOne({ email });
+    // Verify Firebase token
+    const decodedToken = await admin.auth().verifyIdToken(token);
+    const { email, name, picture, uid: googleId } = decodedToken;
+    //  Find or create user
+    let user = await User.findOne({ email });
 
-  if (!user) {
-    user = await User.create({
-      name,
-      email,
-      googleId,
-      picture,
-      password: "googleuser",
+    if (!user) {
+        user = await User.create({
+            name,
+            email,
+            googleId,
+            picture,
+            password: "googleuser",
+        });
+    }
+
+    //  Generate app JWT
+    const authToken = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+        expiresIn: "15d",
     });
-  }
 
-  //  Generate app JWT
-  const authToken = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: "15d",
-  });
-
-  res.status(200).json({
-    message: `Welcome ${user.name}`,
-    token: authToken,
-    user,
-  });
+    res.status(200).json({
+        message: `Welcome ${user.name}`,
+        token: authToken,
+        user,
+    });
 });

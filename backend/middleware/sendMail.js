@@ -9,7 +9,7 @@ const sendMail = async (email, subject, data) => {
     port: 465,
     auth: {
       user: process.env.Gmail,
-      pass: process.env.Password
+      pass: process.env.PASSWORD,
     }
   })
 
