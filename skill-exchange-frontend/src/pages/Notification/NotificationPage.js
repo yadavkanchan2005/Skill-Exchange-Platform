@@ -7,11 +7,14 @@ import {
 } from '../../api/auth';
 import './NotificationPage.css';
 import { FaBell, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 const NotificationPage = ({ setUnreadCount }) => {
     const [notifications, setNotifications] = useState([]);
     const [filter, setFilter] = useState('all');
     const [snackbar, setSnackbar] = useState({ message: '', type: '', visible: false });
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchNotifications = async () => {
