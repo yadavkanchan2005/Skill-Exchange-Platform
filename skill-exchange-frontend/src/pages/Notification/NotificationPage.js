@@ -86,6 +86,9 @@ const NotificationPage = ({ setUnreadCount }) => {
 
     return (
         <div className="notification-page">
+            <button className="btn-back" onClick={() => navigate('/dashboard')}>
+                ← Back
+            </button>
             <h2><FaBell className="notif-icon" /> Notifications</h2>
 
             <div className="filter-buttons">
