@@ -18,13 +18,13 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://skill-exchange-platform-frontend.onrender.com',
+    origin: 'https://skill-exchange-platform-frontend.onrender.com' || 'http://localhost:3001',
     credentials: true,
 }));
 app.use(express.json());
 
 
-app.use('/uploads', express.static('uploads')); 
+app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use('/auth', authRoutes);
