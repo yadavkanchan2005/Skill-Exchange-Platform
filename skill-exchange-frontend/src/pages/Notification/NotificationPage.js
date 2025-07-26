@@ -10,6 +10,7 @@ import { FaBell, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 
+
 const NotificationPage = ({ setUnreadCount }) => {
     const [notifications, setNotifications] = useState([]);
     const [filter, setFilter] = useState('all');
